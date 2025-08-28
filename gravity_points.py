@@ -18,9 +18,9 @@ class Particle:
         speed = random.uniform(1, 2)
         self.vel = pygame.math.Vector2(math.cos(angle), math.sin(angle)) * speed
 
-
     def draw(self):
-        pygame.draw.rect(screen, (0, 255, 100), (int(gp.x), int(gp.y), 4, 4))
+        # draw the particle itself
+        pygame.draw.rect(screen, (0, 255, 100), (int(self.pos.x), int(self.pos.y), 2, 2))
 
     def update(self, gravity_points):
         for gp in gravity_points:
@@ -28,7 +28,7 @@ class Particle:
             dist = max(direction.length(), 10)
             force = direction.normalize() * (600 / dist**3)
             self.vel += force
-        self.vel *= 0.97  # smooth motion
+        self.vel *= 1
         self.pos += self.vel
 
 
@@ -76,7 +76,7 @@ while running:
         p.draw()
 
     for gp in gravity_points:
-        pygame.draw.rect(screen, (255, 255, 255), (int(self.pos.x), int(self.pos.y), 2, 2))
+        pygame.draw.rect(screen, (255, 255, 255), (int(gp.x), int(gp.y), 4, 4))
 
     pygame.display.flip()
     clock.tick(60)
