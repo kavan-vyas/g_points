@@ -3,6 +3,13 @@ import random
 import math
 import colorsys
 
+"""
+    egpoints.py (enhanced gravity point simulation)
+    A premium gravity simulation with enhanced visual effects and user interface.
+    Click to add gravity points that attract particles. Adjust particle count with a slider.
+    Features smooth animations, particle trails, and a polished UI.
+"""
+
 # Initialize Pygame
 pygame.init()
 WIDTH, HEIGHT = 2560, 1080

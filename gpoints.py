@@ -2,6 +2,14 @@ import pygame
 import random
 import math
 
+"""
+gpoints.py(gravity point simulation)
+A gravity simulation where particles are attracted to gravity points.
+Click to add gravity points that attract particles.
+Particles are initialized with random positions and velocities.
+Gravity points can be arranged in various patterns.
+"""
+
 # Init and config
 pygame.init()
 WIDTH, HEIGHT = 1920, 1080  
